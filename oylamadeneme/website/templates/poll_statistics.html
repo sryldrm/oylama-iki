@@ -1,0 +1,13 @@
+<!-- poll_statistics.html -->
+{% extends "base.html" %}
+{% block title %}Oylama İstatistikleri{% endblock %}
+{% block content %}
+<h3 align="center">Oylama İstatistikleri: {{ poll.question }}</h3>
+<p>Toplam Oy Sayısı: {{ total_votes }}</p>
+<ul>
+    {% for option, count in vote_counts.items() %}
+    <li>{{ option }}: {{ count }}</li>
+    {% endfor %}
+</ul>
+<p>Kazanan: {{ winner }}</p>
+{% endblock %}

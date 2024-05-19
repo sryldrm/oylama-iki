@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Oy Ver{% endblock %}
+{% block content %}
+<h3 align="center">Şunun için oy ver: {{ poll.question }}</h3>
+<form method="POST">
+  <div class="form-group">
+    <label for="choice">Oyunuz</label>
+    <select class="form-control" id="choice" name="choice">
+      {% for option in options %}
+      <option value="{{ option }}">{{ option }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Oyla</button>
+</form>
+{% endblock %}

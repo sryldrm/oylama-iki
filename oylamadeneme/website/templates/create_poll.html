@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Anket Oluştur{% endblock %}
+{% block content %}
+<h3 align="center">Anket Oluştur{% if group %} {{ group.name }} {% endif %}</h3>
+<form method="POST" action="{{ url_for('views.create_poll') }}">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+      {{ form.question.label(class="form-label") }}
+      {{ form.question(class="form-control") }}
+  </div>
+  <div class="form-group">
+      {{ form.options.label(class="form-label") }}
+      {{ form.options(class="form-control", rows=5) }}
+  </div>
+  <div class="form-group">
+      {{ form.group_id.label(class="form-label") }}
+      {{ form.group_id(class="form-control") }}
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Anket Oluştur</button>
+</form>
+{% endblock %}

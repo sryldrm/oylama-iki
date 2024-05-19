@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Grup Oluştur{% endblock %}
+{% block content %}
+<h3 align="center">Grup Oluştur</h3>
+{% if user.is_authenticated %}
+<p>Hoş geldiniz, {{ user.username }}!</p>
+{% endif %}
+<form method="POST" action="{{ url_for('views.create_group') }}">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+      <label for="name">Grup Adı</label>
+      {{ form.name(class="form-control") }}
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Grup Oluştur</button>
+</form>
+{% endblock %}

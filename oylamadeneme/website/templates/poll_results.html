@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Oylama Sonuçları{% endblock %}
+{% block content %}
+<h3 align="center">Results for: {{ poll.question }}</h3>
+<p>Total Votes: {{ total_votes }}</p>
+<p>Yes Votes: {{ yes_votes }}</p>
+<p>No Votes: {{ no_votes }}</p>
+{% endblock %}
